@@ -34,59 +34,73 @@ FROM issues"
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-
-body{
-font-family:Segoe UI;
-background:#f4f6f9;
-padding:30px;
-}
-
-.cards{
-display:flex;
-gap:20px;
-}
-
-.card{
-background:white;
-padding:30px;
-width:220px;
-border-radius:10px;
-box-shadow:0 0 10px #ddd;
-}
-
-h1{
-color:#2563eb;
-}
-</style>
+<title>Dashboard</title>
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+rel="stylesheet">
 </head>
-<body>
-<h2>Dashboard</h2>
-<div class="cards">
-<div class="card">
-<h1>
+<body class="bg-light">
+<div class="container mt-5">
+<h2 class="text-primary mb-4">
+Admin Dashboard
+</h2>
+<div class="row g-4">
+<div class="col-md-3">
+<div class="card shadow text-center">
+<div class="card-body">
+<h1 class="text-primary">
 <?= $total["total"] ?>
 </h1>
+<h5>
 Students
+</h5>
 </div>
-<div class="card">
-<h1>
+</div>
+</div>
+<div class="col-md-3">
+<div class="card shadow text-center">
+<div class="card-body">
+<h1 class="text-success">
 <?= $paid["total"] ?>
 </h1>
+<h5>
 Fee Paid
+</h5>
 </div>
-<div class="card">
-<h1>
+</div>
+</div>
+<div class="col-md-3">
+<div class="card shadow text-center">
+<div class="card-body">
+<h1 class="text-warning">
 <?= $sch["total"] ?>
 </h1>
+<h5>
 Scholarship
+</h5>
 </div>
-<div class="card">
-<h1>
+</div>
+</div>
+<div class="col-md-3">
+<div class="card shadow text-center">
+<div class="card-body">
+<h1 class="text-danger">
 <?= $issues["total"] ?>
 </h1>
+<h5>
 Issues
+</h5>
 </div>
+</div>
+</div>
+</div>
+<br>
+<a
+href="manage_students.php"
+class="btn btn-primary"
+>
+Manage Students
+</a>
 </div>
 </body>
 </html>

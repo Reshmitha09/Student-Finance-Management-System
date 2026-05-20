@@ -23,6 +23,7 @@ $conn->query($sql);
 <html>
 <head>
 <title>Manage Students</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <style>
 
 body{
@@ -50,7 +51,6 @@ color:white;
 border:none;
 cursor:pointer;
 }
-
 input{
 padding:10px;
 margin-bottom:20px;
@@ -114,10 +114,13 @@ Edit
 </td>
 <td>
 <a
+class="deleteLink"
 href=
 "delete_student.php?id=<?= $row["id"] ?>"
 >
-<button>
+<button
+type="button"
+>
 Delete
 </button>
 </a>
@@ -127,5 +130,20 @@ Delete
 }
 ?>
 </table>
+<script>
+$(".deleteLink").click(
+function(e){
+let confirmDelete =
+confirm(
+"Delete this student?"
+);
+if(
+!confirmDelete
+){
+e.preventDefault();
+}
+}
+);
+</script>
 </body>
 </html>
